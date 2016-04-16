@@ -1,0 +1,81 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Tahoma, sans-serif;
+  line-height: 1.4;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  font-size: 4vmin;
+}
+
+#content {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  background-color: black;
+}
+
+.slide {
+  width: 80%;
+  height: 80%;
+  color: gray;
+
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide > .head {
+  text-align: center;
+}
+
+.slide > .body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 70%;
+}
+
+.slide > .body > p {
+  white-space: nowrap;
+  margin: 2vmin;
+}
+
+.slide > .body > pre {
+  overflow: scroll;
+}
+
+.slide pre > code.hljs {
+  min-width: 50vw;
+  font-size: 3vmin;
+}
+
+a:visited, a:focus {
+  color: blue;
+  border: none;
+  outline: none;
+}
