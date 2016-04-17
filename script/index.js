@@ -40,8 +40,15 @@
       if (currentSlide) {
         pages.appendChild(currentSlide.get());
       }
-      var codeBlocks = pages.querySelectorAll('pre > code');
+      var codeBlocks = pages.querySelectorAll('pre > code.lang-javascript');
       Array.prototype.forEach.call(codeBlocks, (node) => {
+        var source = `debugger\n\n${node.textContent}\ndebugger\n`;
+        node.addEventListener('click', function (event) {
+          if (!event.metaKey && !event.ctrlKey) {
+            return;
+          }
+          eval(source);
+        });
         hljs.highlightBlock(node);
       });
 
